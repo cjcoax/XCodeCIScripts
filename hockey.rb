@@ -31,8 +31,7 @@ def zip_dsym
   system("/usr/bin/zip -r \"#{dsym_path_after_zip}\" \"#{dsym_path_before_zip}\"")
 end
 
-puts ipa_path
-puts zip_dsym
+
 
 
 def curl_command
@@ -50,7 +49,8 @@ end
 
 
 
-
+puts ipa_path
+puts zip_dsym
 
 # def upload
 #   system(curl_command)
