@@ -32,7 +32,7 @@ end
 
 puts File.file?(ipa_path)
 puts ipa_path
-puts zip_dsym
+puts "zip_dsym = " + zip_dsym
 
 def curl_command
   command = [
