@@ -25,18 +25,14 @@ def dsym_path_after_zip
   File.join('/tmp', "#{bot_name}.dsym.zip")
 end
 
-
-puts File.file?(ipa_path)
-
-
-
 def zip_dsym
   FileUtils.rm_f(dsym_path_after_zip)
   system("/usr/bin/zip -r \"#{dsym_path_after_zip}\" \"#{dsym_path_before_zip}\"")
 end
 
-
-
+puts File.file?(ipa_path)
+puts ipa_path
+puts zip_dsym
 
 def curl_command
   command = [
@@ -51,8 +47,6 @@ def curl_command
   command.join(" ")
 end
 
-puts ipa_path
-puts zip_dsym
 
 def upload
   system(curl_command)
