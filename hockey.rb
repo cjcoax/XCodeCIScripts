@@ -42,7 +42,7 @@ def curl_command
     "-F ipa=@\"#{ipa_path}\"",
     "-F dsym=@\"#{dsym_path_after_zip}\"",
     "-H \"X-HockeyAppToken: #{hockey_token}\"",
-    'https://rink.hockeyapp.net/api/2/apps/b6d61934f4af4a45adc56aa5294f7fd6/app_versions/upload'
+    'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
   command.join(" ")
 end
