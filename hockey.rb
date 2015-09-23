@@ -43,22 +43,14 @@ def curl_command
   command.join(" ")
 end
 
-
 puts "uploading"
 
 
-def upload
-  system(curl_command)
-end
 
-raise 'Unable to create dsym.zip.' unless zip_dsym
-raise 'Upload failed.' unless upload
+# def upload
+#   system(curl_command)
+# end
 
+# raise 'Unable to create dsym.zip.' unless zip_dsym
+# raise 'Upload failed.' unless upload
 
-
-
-puts bot_name
-puts ipa_path 
-puts hockey_token
-puts dsym_path_before_zip
-puts dsym_path_after_zip
