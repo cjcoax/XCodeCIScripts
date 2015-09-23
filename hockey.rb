@@ -52,10 +52,10 @@ end
 puts ipa_path
 puts zip_dsym
 
-# def upload
-#   system(curl_command)
-# end
+def upload
+  system(curl_command)
+end
 
-# raise 'Unable to create dsym.zip.' unless zip_dsym
-# raise 'Upload failed.' unless upload
+raise 'Unable to create dsym.zip.' unless zip_dsym
+raise 'Upload failed.' unless upload
 
