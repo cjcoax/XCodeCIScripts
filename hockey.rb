@@ -43,6 +43,10 @@ def curl_command
   command.join(" ")
 end
 
+
+puts "uploading"
+
+
 def upload
   system(curl_command)
 end
