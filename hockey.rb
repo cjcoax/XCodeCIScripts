@@ -1,7 +1,24 @@
 require 'fileutils'
 
+def ipa_base_path
+	"/Library/Developer/XcodeServer/IntegrationAssets"
+end
+
+def ipa_bot_path
+	ENV['XCS_BOT_ID'] + "-" + "XCS_BOT_NAME"
+end
+
+def ipa_name
+	ENV['BC_PRODUCT_NAME'] + ".ipa"
+end
+
+
+def bot_number 
+	ENV['XCS_INTEGRATION_NUMBER']
+end
+
 def ipa_path
- File.join(ENV['XCS_OUTPUT_DIR'],"ExportedProduct","Apps", "XcodeCITest_CI") + ".ipa"
+ File.join(ipa_base_path, ipa_bot_path, ipa_name)
 end
 
 puts File.file?(ipa_path)
