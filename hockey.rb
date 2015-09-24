@@ -52,6 +52,8 @@ my_dir.each do |filename|
   FileUtils.cp(filename, dest_folder)
 end
 
+puts "here"
+
 def curl_command
   command = [
     '/usr/bin/curl',
