@@ -45,6 +45,7 @@ end
 
 
 my_dir = Dir[File.join(ipa_base_path, ipa_bot_path,bot_number)]
+puts my_dir
 my_dir.each do |filename|
   dest_folder = "/Users/amirrezvani/Downloads/"
   FileUtils.cp(filename, dest_folder)
