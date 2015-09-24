@@ -4,12 +4,25 @@ def ipa_base_path
 	"/Library/Developer/XcodeServer/IntegrationAssets"
 end
 
+def bot_id 
+	ENV['XCS_BOT_ID']
+end
+
+def bot_name
+	ENV['XCS_BOT_NAME']
+end
+
+def product_name
+	ENV['BC_PRODUCT_NAME']
+end
+
+
 def ipa_bot_path
-	ENV['XCS_BOT_ID'] + "-" + ENV['XCS_BOT_NAME']
+	bot_id + "-" + bot_name
 end
 
 def ipa_name
-	ENV['BC_PRODUCT_NAME'] + ".ipa"
+	product_name + ".ipa"
 end
 
 
