@@ -42,22 +42,7 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
-# def dsym_path_before_zip
-#   File.join(ENV['XCS_ARCHIVE'], 'dSYMs', "#{product_name}.app.dSYM")
-# end
 
-# def dsym_path_after_zip
-#   File.join('/tmp', "#{bot_name}.dsym.zip")
-# end
-
-# def zip_dsym
-#   FileUtils.rm_f(dsym_path_after_zip)
-#   system("/usr/bin/zip -r \"#{dsym_path_after_zip}\" \"#{dsym_path_before_zip}\"")
-# end
-
-# puts File.file?(ipa_path)
-# puts ipa_path
-# puts "zip_dsym = " + zip_dsym
 
 def curl_command
   command = [
@@ -65,7 +50,10 @@ def curl_command
     '-F status=2',
     '-F notify=0',
     "-F ipa=@\"#{ipa_path}\"",
-    # "-F dsym=@\"#{dsym_path_after_zip}\"",
+    
+
+
+
     "-H \"X-HockeyAppToken: #{hockey_token}\"",
     'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
@@ -77,6 +65,10 @@ def upload
   system(curl_command)
 end
 
-# raise 'Unable to create dsym.zip.' unless zip_dsym
+
+
+
+
+
 raise 'Upload failed.' unless upload
 
