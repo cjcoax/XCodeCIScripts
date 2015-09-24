@@ -34,8 +34,8 @@ def ipa_path
 	File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
 end
 
-puts File.file?(ipa_path)
-puts ipa_path
+# puts File.file?(ipa_path)
+# puts ipa_path
 
 
 def hockey_token
@@ -47,6 +47,7 @@ end
 my_dir = Dir[File.join(ipa_base_path, ipa_bot_path,bot_number)]
 puts my_dir
 my_dir.each do |filename|
+	puts filename
   dest_folder = "/Users/amirrezvani/Downloads/"
   FileUtils.cp(filename, dest_folder)
 end
