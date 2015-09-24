@@ -43,10 +43,10 @@ def hockey_token
 end
 
 def src_folder
-	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/."
+	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/*"
 end
 
-FileUtils.cp_r src_folder, '/Users/amirrezvani/Downloads'
+FileUtils.cp_r(Dir[src_folder, '/Users/amirrezvani/Downloads/35')
 
 
 puts "here"
