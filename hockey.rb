@@ -42,15 +42,12 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
-
-
-my_dir = Dir[File.join(ipa_base_path, ipa_bot_path,bot_number)]
-puts my_dir
-my_dir.each do |filename|
-	puts filename
-  dest_folder = "/Users/amirrezvani/Downloads/"
-  FileUtils.cp(filename, dest_folder)
+def src_folder
+	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/."
 end
+
+FileUtils.cp_r src_folde, '/Users/amirrezvani/Downloads'
+
 
 puts "here"
 
