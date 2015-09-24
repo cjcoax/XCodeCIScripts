@@ -46,6 +46,8 @@ def src_folder
 	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/*"
 end
 
+puts src_folder
+
 FileUtils.cp_r(Dir[src_folder, '/Users/amirrezvani/Downloads/35')
 
 
