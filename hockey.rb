@@ -1,8 +1,7 @@
 require 'fileutils'
 
 def ipa_base_path
-	# "/Library/Developer/XcodeServer/IntegrationAssets"
-	"/Users/amirrezvani/Downloads"
+	"/Library/Developer/XcodeServer/IntegrationAssets"
 end
 
 def bot_id 
@@ -28,17 +27,12 @@ end
 
 
 def bot_number 
-	ENV['XCS_INTEGRATION_NUMBER']
+	ENV['XCS_INTEGRATION_NUMBER'].to_s
 end
-
-# def ipa_path
-#  File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
-# end
 
 def ipa_path
-	File.join(ipa_base_path, ipa_name)
+	File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
 end
-
 
 puts File.file?(ipa_path)
 puts ipa_path
