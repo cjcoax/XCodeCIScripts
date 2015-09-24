@@ -31,7 +31,7 @@ def bot_number
 end
 
 def ipa_path
- File.join(ipa_base_path, ipa_bot_path, ipa_name)
+ File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
 end
 
 puts File.file?(ipa_path)
