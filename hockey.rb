@@ -48,7 +48,7 @@ end
 
 puts src_folder
 
-FileUtils.cp_r(Dir[src_folder, '/Users/amirrezvani/Downloads/35')
+FileUtils.cp_r(Dir[src_folder], '/Users/amirrezvani/Downloads/35')
 
 
 puts "here"
