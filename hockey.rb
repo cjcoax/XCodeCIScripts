@@ -37,18 +37,10 @@ end
 puts File.file?(ipa_path)
 puts ipa_path
 
-# def bot_name
-#   ENV['XCS_BOT_NAME']
-# end
 
-
-# def product_name
-#   ENV['BC_PRODUCT_NAME']
-# end
-
-# def hockey_token
-#   ENV['BC_HOCKEY_TOKEN']
-# end
+def hockey_token
+  ENV['BC_HOCKEY_TOKEN']
+end
 
 # def dsym_path_before_zip
 #   File.join(ENV['XCS_ARCHIVE'], 'dSYMs', "#{product_name}.app.dSYM")
@@ -67,24 +59,24 @@ puts ipa_path
 # puts ipa_path
 # puts "zip_dsym = " + zip_dsym
 
-# def curl_command
-#   command = [
-#     '/usr/bin/curl',
-#     '-F status=2',
-#     '-F notify=0',
-#     "-F ipa=@\"#{ipa_path}\"",
-#     "-F dsym=@\"#{dsym_path_after_zip}\"",
-#     "-H \"X-HockeyAppToken: #{hockey_token}\"",
-#     'https://rink.hockeyapp.net/api/2/apps/upload'
-#   ]
-#   command.join(" ")
-# end
+def curl_command
+  command = [
+    '/usr/bin/curl',
+    '-F status=2',
+    '-F notify=0',
+    "-F ipa=@\"#{ipa_path}\"",
+    # "-F dsym=@\"#{dsym_path_after_zip}\"",
+    "-H \"X-HockeyAppToken: #{hockey_token}\"",
+    'https://rink.hockeyapp.net/api/2/apps/upload'
+  ]
+  command.join(" ")
+end
 
 
-# def upload
-#   system(curl_command)
-# end
+def upload
+  system(curl_command)
+end
 
-# raise 'Unable to create dsym.zip.' unless zip_dsym
-# raise 'Upload failed.' unless upload
+raise 'Unable to create dsym.zip.' unless zip_dsym
+raise 'Upload failed.' unless upload
 
