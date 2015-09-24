@@ -1,7 +1,7 @@
 require 'fileutils'
 
 def ipa_path
- File.join(ENV['XCS_OUTPUT_DIR'], ENV['BC_PRODUCT_NAME']) + ".ipa"
+ File.join(ENV['XCS_OUTPUT_DIR'],"ExportedProduct","Apps", ENV['BC_PRODUCT_NAME']) + ".ipa"
 end
 
 puts File.file?(ipa_path)
