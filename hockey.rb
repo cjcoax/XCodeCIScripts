@@ -44,6 +44,12 @@ end
 
 
 
+my_dir = Dir[File.join(ipa_base_path, ipa_bot_path,bot_number)]
+my_dir.each do |filename|
+  dest_folder = "/Users/amirrezvani/Downloads/"
+  FileUtils.cp(filename, dest_folder)
+end
+
 def curl_command
   command = [
     '/usr/bin/curl',
@@ -61,14 +67,14 @@ def curl_command
 end
 
 
-def upload
-  system(curl_command)
-end
+# def upload
+#   system(curl_command)
+# end
 
 
 
 
 
 
-raise 'Upload failed.' unless upload
+# raise 'Upload failed.' unless upload
 
