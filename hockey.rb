@@ -77,6 +77,6 @@ def upload
   system(curl_command)
 end
 
-raise 'Unable to create dsym.zip.' unless zip_dsym
+# raise 'Unable to create dsym.zip.' unless zip_dsym
 raise 'Upload failed.' unless upload
 
