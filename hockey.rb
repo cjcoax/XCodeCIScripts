@@ -5,7 +5,7 @@ def ipa_base_path
 end
 
 def ipa_bot_path
-	ENV['XCS_BOT_ID'] + "-" + "XCS_BOT_NAME"
+	ENV['XCS_BOT_ID'] + "-" + ENV['XCS_BOT_NAME']
 end
 
 def ipa_name
