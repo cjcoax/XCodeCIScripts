@@ -70,14 +70,14 @@ def curl_command
 end
 
 
-# def upload
-#   system(curl_command)
-# end
+def upload
+  system(curl_command)
+end
 
 
 
 
 
 
-# raise 'Upload failed.' unless upload
+raise 'Upload failed.' unless upload
 
