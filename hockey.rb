@@ -52,11 +52,10 @@ def curl_command
     '-F status=2',
     '-F notify=0',
     '-F ipa=@\"#{ipa_path}\"',
-    '-F notes=@\"#{release_notes}\"'
-
-
-
-
+    '-F notes=@\"#{release_notes}\"',
+    '-F notes_type=0',
+    '-F notify=1',
+    '-F mandatory=1',
     '-H \"X-HockeyAppToken: #{hockey_token}\"',
     'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
