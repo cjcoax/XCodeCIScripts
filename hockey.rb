@@ -36,7 +36,6 @@ end
 
 puts ipa_path
 puts File.file?(ipa_path)
-# puts ipa_path
 
 
 def hockey_token
