@@ -46,7 +46,7 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
- puts previous_bot_number
+ puts bot_number_int - 1
  puts "previous bot:" + File.directory?(File.join(ipa_base_path, ipa_bot_path,(bot_number_int - 1).to_s))
  puts File.directory?(File.join(ipa_base_path, ipa_bot_path,bot_number))
 
