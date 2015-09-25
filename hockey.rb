@@ -31,7 +31,7 @@ def bot_number
 end
 
 def bot_number_int 
-	ENV['XCS_INTEGRATION_NUMBER']
+	ENV['XCS_INTEGRATION_NUMBER'].to_i
 end
 
 def ipa_path
