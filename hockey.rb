@@ -26,6 +26,12 @@ def bot_number
 	ENV['XCS_INTEGRATION_NUMBER'].to_s
 end
 
+
+def release_notes
+  ENV['BC_RELEASE_NOTE']
+end
+
+
 def ipa_path
   File.join(ipa_base_path, exported_product_path,ipa_name)
 end
@@ -46,7 +52,8 @@ def curl_command
     '-F status=2',
     '-F notify=0',
     '-F ipa=@\"#{ipa_path}\"',
-    
+    '-F notes=@\"#{release_notes}\"'
+
 
 
 
