@@ -30,6 +30,10 @@ def bot_number
 	ENV['XCS_INTEGRATION_NUMBER'].to_s
 end
 
+def previous_bot_number
+	(['XCS_INTEGRATION_NUMBER'] - 1).to_s
+end
+
 def ipa_path
 	File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
 end
@@ -42,6 +46,7 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
+ puts "previous bot:" + File.directory?(File.join(ipa_base_path, ipa_bot_path,previous_bot_number))
  puts File.directory?(File.join(ipa_base_path, ipa_bot_path,bot_number))
 
 
