@@ -42,11 +42,14 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
-def src_folder
-	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/*"
-end
+ puts File.directory?(File.join(ipa_base_path, ipa_bot_path,bot_number))
 
-puts src_folder
+
+# def src_folder
+# 	File.join(ipa_base_path, ipa_bot_path,bot_number) + "/*"
+# end
+
+# puts src_folder
 
 # FileUtils.cp_r(Dir[src_folder], '/Users/amirrezvani/Downloads/35')
 
