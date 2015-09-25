@@ -61,7 +61,7 @@ def curl_command
 end
 
 
-sleep 10
+sleep 40
 def upload
   system(curl_command)
 end
