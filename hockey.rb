@@ -31,7 +31,7 @@ def bot_number
 end
 
 def ipa_path
-	File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
+	"/Library/Developer/XcodeServer/IntegrationAssets/b6cf942fdcb99933f997be8381009090-XcodeCITest_CI Bot/59/XcodeCITest_CI.ipa"#File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
 end
 
 puts ipa_path
