@@ -30,15 +30,12 @@ def bot_number
 	ENV['XCS_INTEGRATION_NUMBER'].to_s
 end
 
-def previous_bot_number_int 
-	ENV['XCS_INTEGRATION_NUMBER'].to_i - 1
-end
-
 def ipa_path
-	File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
+	File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
 end
 
-# puts File.file?(ipa_path)
+puts ipa_path
+puts File.file?(ipa_path)
 # puts ipa_path
 
 
@@ -46,15 +43,6 @@ def hockey_token
   ENV['BC_HOCKEY_TOKEN']
 end
 
- puts previous_bot_number_int
- puts "previous bot:" + File.directory?(File.join(ipa_base_path, ipa_bot_path,previous_bot_number_int.to_s))
- puts File.directory?(File.join(ipa_base_path, ipa_bot_path,bot_number))
-
-
-
-
-
-puts "here"
 
 def curl_command
   command = [
