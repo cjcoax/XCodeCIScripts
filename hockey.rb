@@ -27,7 +27,6 @@ def bot_number
 end
 
 def ipa_path
-	# File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
   File.join(ipa_base_path, exported_product_path,ipa_name)
 end
 
@@ -46,12 +45,12 @@ def curl_command
     '/usr/bin/curl',
     '-F status=2',
     '-F notify=0',
-    "-F ipa=@\"#{ipa_path}\"",
+    '-F ipa=@\"#{ipa_path}\"',
     
 
 
 
-    "-H \"X-HockeyAppToken: #{hockey_token}\"",
+    '-H \"X-HockeyAppToken: #{hockey_token}\"',
     'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
   command.join(" ")
