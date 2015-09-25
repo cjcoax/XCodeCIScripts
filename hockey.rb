@@ -13,17 +13,8 @@ def bot_id
 	ENV['XCS_BOT_ID']
 end
 
-def bot_name
-	ENV['XCS_BOT_NAME']
-end
-
 def product_name
 	ENV['BC_PRODUCT_NAME']
-end
-
-
-def ipa_bot_path
-	bot_id + "-" + bot_name
 end
 
 def ipa_name
@@ -36,7 +27,8 @@ def bot_number
 end
 
 def ipa_path
-	File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
+	# File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
+  File.join(ipa_base_path, exported_product_path,ipa_name)
 end
 
 puts ipa_path
@@ -66,7 +58,6 @@ def curl_command
 end
 
 
-sleep 40
 def upload
   system(curl_command)
 end
