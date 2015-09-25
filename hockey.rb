@@ -44,6 +44,7 @@ end
 
 
 def curl_command
+	
   command = [
     '/usr/bin/curl',
     '-F status=2',
@@ -60,9 +61,9 @@ def curl_command
 end
 
 
-def upload
+# def upload
   system(curl_command)
-end
+# end
 
 
 
