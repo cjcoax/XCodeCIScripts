@@ -56,7 +56,7 @@ def curl_command
     '-F notify=0',
     "-F ipa=@\"#{ipa_path}\"",
     
-    
+
 
 
     "-H \"X-HockeyAppToken: #{hockey_token}\"",
@@ -66,14 +66,9 @@ def curl_command
 end
 
 
-sleep 40
 def upload
   system(curl_command)
 end
-
-
-
-
 
 
 raise 'Upload failed.' unless upload
