@@ -48,6 +48,7 @@ def curl_command
     '-F notify=0',
     "-F ipa=@\"#{ipa_path}\"",
     '-F notify=2',
+    '-F mandatory=1',
 
 
     "-H \"X-HockeyAppToken: #{hockey_token}\"",
