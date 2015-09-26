@@ -13,8 +13,17 @@ def bot_id
 	ENV['XCS_BOT_ID']
 end
 
+def bot_name
+	ENV['XCS_BOT_NAME']
+end
+
 def product_name
 	ENV['BC_PRODUCT_NAME']
+end
+
+
+def ipa_bot_path
+	bot_id + "-" + bot_name
 end
 
 def ipa_name
@@ -26,14 +35,8 @@ def bot_number
 	ENV['XCS_INTEGRATION_NUMBER'].to_s
 end
 
-
-def release_notes
-  ENV['BC_RELEASE_NOTE']
-end
-
-
 def ipa_path
-  File.join(ipa_base_path, exported_product_path,ipa_name)
+	File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
 end
 
 puts ipa_path
@@ -51,18 +54,19 @@ def curl_command
     '/usr/bin/curl',
     '-F status=2',
     '-F notify=0',
-    '-F ipa=@\"#{ipa_path}\"',
-    '-F notes=@\"#{release_notes}\"',
-    '-F notes_type=0',
-    '-F notify=1',
-    '-F mandatory=1',
-    '-H \"X-HockeyAppToken: #{hockey_token}\"',
+    "-F ipa=@\"#{ipa_path}\"",
+    
+    
+
+
+    "-H \"X-HockeyAppToken: #{hockey_token}\"",
     'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
   command.join(" ")
 end
 
 
+sleep 40
 def upload
   system(curl_command)
 end
