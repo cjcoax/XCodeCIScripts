@@ -1,47 +1,50 @@
 require 'fileutils'
 
 def ipa_base_path
-  ENV['XCS_OUTPUT_DIR']
-end
-
-def exported_product_path 
-  "ExportedProduct/Apps"
+	"/Library/Developer/XcodeServer/IntegrationAssets"
+	# "/Users/amirrezvani/Downloads"
 end
 
 
 def bot_id 
-  ENV['XCS_BOT_ID']
+	"b6cf942fdcb99933f997be8381009090"
+end
+
+def bot_name
+	"XcodeCITest_CI Bot"
 end
 
 def product_name
-  ENV['BC_PRODUCT_NAME']
+	"XcodeCITest_CI"
+end
+
+
+def ipa_bot_path
+	bot_id + "-" + bot_name
 end
 
 def ipa_name
-  product_name + ".ipa"
+	product_name + ".ipa"
 end
-
 
 def bot_number 
-  ENV['XCS_INTEGRATION_NUMBER'].to_s
+	27.to_s
 end
+
 
 def ipa_path
-  # File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
-  File.join(ipa_base_path, exported_product_path,ipa_name)
+	File.join(ipa_base_path, ipa_bot_path,bot_number ,ipa_name)
 end
 
+
 puts ipa_path
-puts File.file?(ipa_path)
 
 
 def hockey_token
-  ENV['BC_HOCKEY_TOKEN']
+	"0b8774d2211745089d86dcb460a88085"
 end
 
-
 def curl_command
-
   command = [
     '/usr/bin/curl',
     '-F status=2',
@@ -57,15 +60,8 @@ def curl_command
   command.join(" ")
 end
 
-
 def upload
   system(curl_command)
 end
 
-
-
-
-
-
 raise 'Upload failed.' unless upload
-
