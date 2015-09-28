@@ -17,7 +17,7 @@ end
 
 
 def bot_number
-	"8"
+	ENV["XCS_INTEGRATION_NUMBER"]
 end
 
 
