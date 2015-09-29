@@ -59,9 +59,9 @@ end
 #   ENV["BC_BRANCH_NAME"]
 # end
 
-# def app_version
-#   exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
-# end
+def app_version
+  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
+end
 
 puts app_version
 
