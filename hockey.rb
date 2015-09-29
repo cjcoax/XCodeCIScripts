@@ -68,7 +68,6 @@ def hockey_app_notes
 end
 
 
-puts "before submitting"
 
 def curl_command
 
@@ -76,6 +75,8 @@ def curl_command
     '/usr/bin/curl',
     '-F status=2',
     '-F notify=0',
+    '-F notes_type=0',
+    '-F notes=#{hockey_app_notes}',
     "-F ipa=@\"#{ipa_path}\"",
     '-F notify=2',
     '-F mandatory=1',
@@ -87,8 +88,6 @@ def curl_command
   command.join(" ")
 end
 
-
-puts "after submitting"
 
 def upload
   system(curl_command)
