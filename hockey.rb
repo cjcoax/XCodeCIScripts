@@ -55,7 +55,8 @@ end
 
 
 def branch_name
-  exec("git rev-parse --abbrev-ref HEAD")
+  #exec("git rev-parse --abbrev-ref HEAD")
+  ENV["BC_BRANCH_NAME"]
 end
 
 def app_version
