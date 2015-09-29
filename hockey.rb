@@ -59,6 +59,8 @@ end
 
 # puts app_version
 
+puts info_plist_path
+
 def hockey_app_notes
     "Branch: " + branch_name #+ ", Version: " + app_version 
 end
