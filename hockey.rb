@@ -31,8 +31,8 @@ def ipa_path
   File.join(ipa_base_path, exported_product_path,ipa_name)
 end
 
-puts ipa_path
-puts File.file?(ipa_path)
+# puts ipa_path
+# puts File.file?(ipa_path)
 
 
 def hockey_token
@@ -76,8 +76,8 @@ def curl_command
     '/usr/bin/curl',
     '-F status=2',
     '-F notify=0',
-    '-F notes_type=0',
-    "-F notes=\"#{hockey_app_notes}\"",
+    # '-F notes_type=0',
+    # "-F notes=\"#{hockey_app_notes}\"",
     "-F ipa=@\"#{ipa_path}\"",
     '-F notify=2',
     '-F mandatory=1',
