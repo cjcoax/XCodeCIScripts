@@ -68,6 +68,7 @@ def hockey_app_notes
 end
 
 
+puts "before submitting"
 
 def curl_command
 
@@ -86,6 +87,8 @@ def curl_command
   command.join(" ")
 end
 
+
+puts "after submitting"
 
 def upload
   system(curl_command)
