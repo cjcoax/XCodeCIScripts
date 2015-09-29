@@ -33,8 +33,6 @@ def ipa_path
   File.join(ipa_base_path, exported_product_path,ipa_name)
 end
 
-# puts ipa_path
-# puts File.file?(ipa_path)
 
 
 def hockey_token
@@ -66,11 +64,10 @@ def app_version
 end
 
 def hockey_app_notes
-    "test"# "Branch: " + branch_name + ", Version: " + app_version + ", Build#: " + bot_number
+    "Branch: " + branch_name + ", Version: " + app_version + ", Build#: " + bot_number
 end
 
-# puts "here"
-# puts hockey_app_notes
+puts hockey_app_notes
 
 
 
