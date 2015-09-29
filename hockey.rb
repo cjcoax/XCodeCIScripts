@@ -1,6 +1,6 @@
 require 'fileutils'
+require 'plist'
 
-puts "start"
 
 def ipa_base_path
   ENV['XCS_OUTPUT_DIR']
@@ -19,9 +19,9 @@ def ipa_name
 end
 
 
-# def bot_number 
-#   ENV['XCS_INTEGRATION_NUMBER'].to_s
-# end
+def bot_number 
+  ENV['XCS_INTEGRATION_NUMBER'].to_s
+end
 
 def ipa_path
   File.join(ipa_base_path, exported_product_path,ipa_name)
@@ -49,25 +49,29 @@ end
 
 
 def branch_name
-  #exec("git rev-parse --abbrev-ref HEAD")
   ENV["BC_BRANCH_NAME"]
 end
 
-def app_version
-  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleShortVersionString' \"#{info_plist_path}\"")
+
+def info_plist
+  Plist::parse_xml("#{info_plist_path}")
 end
 
-puts app_version
+def app_version
+  info_plist["CFBundleShortVersionString"]  
+end
 
-puts info_plist_path
+def build_version
+  info_plist["CFBundleVersion"]
+end
+
 
 def hockey_app_notes
-    "Branch: " + branch_name #+ ", Version: " + app_version 
+    "Branch: " + branch_name + ", Version: " + app_version + ", Build Number: " + build_version
 end
 
-puts hockey_app_notes
 
-
+puts "************ Uploading to Hockey App ************"
 
 
 def curl_command
