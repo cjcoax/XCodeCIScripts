@@ -67,6 +67,7 @@ def hockey_app_notes
     "Branch: " + branch_name + ", Version: " + app_version + ", Build#: " + bot_number
 end
 
+puts "here"
 puts hockey_app_notes
 
 def curl_command
