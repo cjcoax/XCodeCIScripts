@@ -17,14 +17,13 @@ end
 
 
 def bot_number
-	ENV["XCS_INTEGRATION_NUMBER"]
+	ENV['XCS_INTEGRATION_NUMBER']
 end
 
 
 def version_command
-	"/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{bot_number}' '#{info_plist_path}'"
+	"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
 end
-
 
 exec(version_command)
 
