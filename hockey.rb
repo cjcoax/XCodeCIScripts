@@ -66,7 +66,7 @@ end
 puts app_version
 
 def hockey_app_notes
-    "Branch: " + branch_name + ", Version: " + app_version 
+    "Branch: " #+ branch_name + ", Version: " + app_version 
 end
 
 puts hockey_app_notes
