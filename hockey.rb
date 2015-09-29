@@ -53,11 +53,11 @@ def branch_name
   ENV["BC_BRANCH_NAME"]
 end
 
-# def app_version
-#   exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
-# end
+def app_version
+  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' \"#{info_plist_path}\"").to_s
+end
 
-# puts app_version
+puts app_version
 
 puts info_plist_path
 
