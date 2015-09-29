@@ -63,6 +63,8 @@ def app_version
   exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
 end
 
+puts app_version
+
 def hockey_app_notes
     "Branch: " + branch_name + ", Version: " + app_version 
 end
