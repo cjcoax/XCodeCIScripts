@@ -54,14 +54,14 @@ def info_plist_path
 end
 
 
-def branch_name
-  #exec("git rev-parse --abbrev-ref HEAD")
-  ENV["BC_BRANCH_NAME"]
-end
+# def branch_name
+#   #exec("git rev-parse --abbrev-ref HEAD")
+#   ENV["BC_BRANCH_NAME"]
+# end
 
-def app_version
-  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
-end
+# def app_version
+#   exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
+# end
 
 puts app_version
 
