@@ -54,7 +54,7 @@ def branch_name
 end
 
 def app_version
-  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' \"#{info_plist_path}\"").to_s
+  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleShortVersionString' \"#{info_plist_path}\"")
 end
 
 puts app_version
