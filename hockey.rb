@@ -10,11 +10,6 @@ def exported_product_path
   "ExportedProduct/Apps"
 end
 
-
-def bot_id 
-  ENV['XCS_BOT_ID']
-end
-
 def product_name
   ENV['BC_PRODUCT_NAME']
 end
@@ -24,12 +19,11 @@ def ipa_name
 end
 
 
-def bot_number 
-  ENV['XCS_INTEGRATION_NUMBER'].to_s
-end
+# def bot_number 
+#   ENV['XCS_INTEGRATION_NUMBER'].to_s
+# end
 
 def ipa_path
-  # File.join(ipa_base_path, ipa_bot_path,bot_number,ipa_name)
   File.join(ipa_base_path, exported_product_path,ipa_name)
 end
 
@@ -59,11 +53,11 @@ end
 #   ENV["BC_BRANCH_NAME"]
 # end
 
-def app_version
-  exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
-end
+# def app_version
+#   exec("/usr/libexec/PlistBuddy -c 'print:CFBundleVersion' '#{info_plist_path}'")
+# end
 
-puts app_version
+# puts app_version
 
 def hockey_app_notes
     "Branch: " #+ branch_name + ", Version: " + app_version 
