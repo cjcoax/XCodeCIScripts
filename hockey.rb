@@ -64,7 +64,7 @@ def app_version
 end
 
 def hockey_app_notes
-    "Branch: " + branch_name + ", Version: " + app_version + ", Build#: " + bot_number
+    "Branch: " + branch_name + ", Version: " + app_version 
 end
 
 puts hockey_app_notes
