@@ -76,7 +76,7 @@ def curl_command
     '-F status=2',
     '-F notify=0',
     '-F notes_type=0',
-    "-F notes= #{hockey_app_notes}",
+    "-F notes=\"#{hockey_app_notes}\"",
     "-F ipa=@\"#{ipa_path}\"",
     '-F notify=2',
     '-F mandatory=1',
