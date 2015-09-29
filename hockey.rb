@@ -1,5 +1,7 @@
 require 'fileutils'
 
+puts "start"
+
 def ipa_base_path
   ENV['XCS_OUTPUT_DIR']
 end
