@@ -37,7 +37,7 @@ end
 
 
 def timestamped_app_version
-  now + app_version
+  "2.0"#now + app_version
 end
 
 
