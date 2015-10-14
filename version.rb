@@ -41,8 +41,6 @@ def timestamped_app_version
 end
 
 
-puts timestamped_app_version
-
 def app_version_command
 	"/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'"
 end
