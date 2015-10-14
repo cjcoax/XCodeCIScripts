@@ -1,5 +1,5 @@
 require 'fileutils'
-
+require 'plist'
 
 def base_source_dir
 	ENV['XCS_SOURCE_DIR']
@@ -21,7 +21,30 @@ def bot_number
 end
 
 
-def version_command
+def info_plist
+  Plist::parse_xml("#{info_plist_path}")
+end
+
+
+def app_version
+  info_plist["CFBundleShortVersionString"]  
+end
+
+
+def now
+  Time.now.strftime("%Y/%m/%d %H:%M")
+end
+
+
+def timestamped_app_version
+  now + " " + app_version
+end
+
+def app_version_command
+	"/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'"
+end
+
+def build_version_command
 	"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
 end
 
