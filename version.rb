@@ -32,12 +32,12 @@ end
 
 
 def now
-  Time.now.strftime("%Y/%m/%d %H:%M")
+  DateTime.now.strftime('%s')
 end
 
 
 def timestamped_app_version
-  now + " " + app_version
+  now + "-" + app_version
 end
 
 
