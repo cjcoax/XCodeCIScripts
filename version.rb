@@ -48,7 +48,8 @@ def build_version_command
 	"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
 end
 
-exec(version_command)
+exec(app_version_command)
+exec(build_version_command)
 
 
 
