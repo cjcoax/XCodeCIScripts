@@ -42,17 +42,17 @@ end
 
 
 puts timestamped_app_version
+puts bot_number
 
-def app_version_command
-	"/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'"
+def version_command
+	command = ["/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'",
+		";",
+		"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
+	]
+	command.join(" ")
 end
 
-def build_version_command
-	"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
-end
-
-exec(app_version_command)
-exec(build_version_command)
+exec(version_command)
 
 
 
