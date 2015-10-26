@@ -32,12 +32,16 @@ end
 
 
 def now
-  Time.now.strftime("%Y/%m/%d %H:%M")
+  DateTime.now.strftime('%s').to_i/60
 end
 
 
 def timestamped_app_version
-  now + "-" + app_version
+  	now + app_version
+end
+
+def timestamped_build_version
+	now + bot_number
 end
 
 def version_command
