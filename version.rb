@@ -37,11 +37,11 @@ end
 
 
 def timestamped_app_version
-  	now + app_version
+  	now.to_s + app_version
 end
 
 def timestamped_build_version
-	now + bot_number
+	now.to_s + bot_number
 end
 
 def version_command
