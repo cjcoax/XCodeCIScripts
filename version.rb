@@ -47,7 +47,7 @@ end
 def version_command
 	command = ["/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'",
 		";",
-		"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{bot_number}' '#{info_plist_path}'"
+		"/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{timestamped_build_version}' '#{info_plist_path}'"
 	]
 	command.join(" ")
 end
