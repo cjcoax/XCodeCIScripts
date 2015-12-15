@@ -90,7 +90,7 @@ def format_plist(plistArr)
   end.join # change to_sentence -> join
 end
 
-
+puts "info_plist"
 puts format_plist(info_plist)
 
 def app_version
