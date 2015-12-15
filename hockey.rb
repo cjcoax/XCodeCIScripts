@@ -85,13 +85,13 @@ end
 
 
 def format_plist(plistArr)
-  plistArr.map do |plistItem| # change each -> map
-    "\n\n#{ plistItem }" # delete puts, [0]
-  end.join # change to_sentence -> join
+  plistArr.each do |item| 
+    puts item
+  end
 end
 
 puts "info_plist"
-puts format_plist(info_plist)
+format_plist(info_plist)
 
 def app_version
   info_plist["CFBundleShortVersionString"]  
