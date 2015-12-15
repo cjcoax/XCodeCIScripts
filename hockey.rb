@@ -57,7 +57,7 @@ end
 
 puts base_source_dir
 
-def 
+def info_plist_sub_path
   ENV['BC_INFO_PLIST_SUB_PATH']
 end
 
