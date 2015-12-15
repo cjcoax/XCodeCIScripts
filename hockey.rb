@@ -83,7 +83,6 @@ def info_plist
   Plist::parse_xml("#{info_plist_path}")
 end
 
-puts "info_plist " + info_plist
 
 def app_version
   info_plist["CFBundleShortVersionString"]  
