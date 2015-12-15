@@ -85,8 +85,8 @@ end
 
 
 def format_plist(plistArr)
-  plistArr.each do |item| 
-    puts item
+  for element in plistArr
+    puts element
   end
 end
 
