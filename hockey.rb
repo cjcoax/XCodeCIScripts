@@ -84,6 +84,15 @@ def info_plist
 end
 
 
+def format_plist(plistArr)
+  plistArr.map do |plistItem| # change each -> map
+    "\n\n#{ plistItem }" # delete puts, [0]
+  end.join # change to_sentence -> join
+end
+
+
+puts format_plist(info_plist)
+
 def app_version
   info_plist["CFBundleShortVersionString"]  
 end
