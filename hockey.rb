@@ -28,6 +28,8 @@ def ipa_path
 end
 
 
+puts ipa_path
+
 
 def hockey_token
   ENV['BC_HOCKEY_TOKEN']
