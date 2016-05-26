@@ -44,6 +44,9 @@ def timestamped_build_version
 	now.to_s + bot_number
 end
 
+puts info_plist
+
+
 def version_command
 	command = ["/usr/libexec/PlistBuddy -c 'Set CFBundleShortVersionString #{timestamped_app_version}' '#{info_plist_path}'",
 		";",
