@@ -11,6 +11,8 @@ def exported_product_path
   "ExportedProduct/Apps"
 end
 
+puts "exported_product_path :" + exported_product_path
+
 def product_name
   ENV['BC_PRODUCT_NAME']
 end
